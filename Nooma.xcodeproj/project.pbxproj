@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B794843D9A0B217B8CE51D4 /* Pods_Nooma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA95144F3BD49650E06A7FE /* Pods_Nooma.framework */; };
+		5A06ABF31DACE82E008645F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A06ABF11DACE82E008645F9 /* Main.storyboard */; };
+		5A281DFE1DAC93F900DA8E1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A281DFD1DAC93F900DA8E1E /* AppDelegate.swift */; };
+		5A281E001DAC93F900DA8E1E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A281DFF1DAC93F900DA8E1E /* BooksViewController.swift */; };
+		5A281E021DAC93F900DA8E1E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A281E011DAC93F900DA8E1E /* SecondViewController.swift */; };
+		5A281E071DAC93F900DA8E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A281E061DAC93F900DA8E1E /* Assets.xcassets */; };
+		5A281E0A1DAC93F900DA8E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A281E081DAC93F900DA8E1E /* LaunchScreen.storyboard */; };
+		5A6134751DACAA9F000084DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6134741DACAA9F000084DC /* LoginViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		01A41DB019DA449488002035 /* Pods-Nooma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nooma.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nooma/Pods-Nooma.debug.xcconfig"; sourceTree = "<group>"; };
+		5A06ABF21DACE82E008645F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5A281DFA1DAC93F900DA8E1E /* Nooma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nooma.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A281DFD1DAC93F900DA8E1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5A281DFF1DAC93F900DA8E1E /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		5A281E011DAC93F900DA8E1E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		5A281E061DAC93F900DA8E1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A281E091DAC93F900DA8E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5A281E0B1DAC93F900DA8E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A6134741DACAA9F000084DC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5B36A9569987D7C5106E6E79 /* Pods-Nooma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nooma.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nooma/Pods-Nooma.release.xcconfig"; sourceTree = "<group>"; };
+		BEA95144F3BD49650E06A7FE /* Pods_Nooma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nooma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A281DF71DAC93F800DA8E1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B794843D9A0B217B8CE51D4 /* Pods_Nooma.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A281DF11DAC93F800DA8E1E = {
+			isa = PBXGroup;
+			children = (
+				5A281DFC1DAC93F900DA8E1E /* Nooma */,
+				5A281DFB1DAC93F900DA8E1E /* Products */,
+				EAA6E4EED30502EA8FF962F8 /* Pods */,
+				829AACCF22EF111F695A4A06 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5A281DFB1DAC93F900DA8E1E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A281DFA1DAC93F900DA8E1E /* Nooma.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A281DFC1DAC93F900DA8E1E /* Nooma */ = {
+			isa = PBXGroup;
+			children = (
+				5A06ABF11DACE82E008645F9 /* Main.storyboard */,
+				5A281DFD1DAC93F900DA8E1E /* AppDelegate.swift */,
+				5A281DFF1DAC93F900DA8E1E /* BooksViewController.swift */,
+				5A281E011DAC93F900DA8E1E /* SecondViewController.swift */,
+				5A281E061DAC93F900DA8E1E /* Assets.xcassets */,
+				5A281E081DAC93F900DA8E1E /* LaunchScreen.storyboard */,
+				5A281E0B1DAC93F900DA8E1E /* Info.plist */,
+				5A6134741DACAA9F000084DC /* LoginViewController.swift */,
+			);
+			path = Nooma;
+			sourceTree = "<group>";
+		};
+		829AACCF22EF111F695A4A06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEA95144F3BD49650E06A7FE /* Pods_Nooma.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EAA6E4EED30502EA8FF962F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01A41DB019DA449488002035 /* Pods-Nooma.debug.xcconfig */,
+				5B36A9569987D7C5106E6E79 /* Pods-Nooma.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A281DF91DAC93F800DA8E1E /* Nooma */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A281E0E1DAC93F900DA8E1E /* Build configuration list for PBXNativeTarget "Nooma" */;
+			buildPhases = (
+				ADEF9EAFC2FB9AA825BC9DCD /* [CP] Check Pods Manifest.lock */,
+				5A281DF61DAC93F800DA8E1E /* Sources */,
+				5A281DF71DAC93F800DA8E1E /* Frameworks */,
+				5A281DF81DAC93F800DA8E1E /* Resources */,
+				A821FEB1942E0C96CC81EFA9 /* [CP] Embed Pods Frameworks */,
+				AC3CEB240BB37DFC25CF0D0D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nooma;
+			productName = Nooma;
+			productReference = 5A281DFA1DAC93F900DA8E1E /* Nooma.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A281DF21DAC93F800DA8E1E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Nooma;
+				TargetAttributes = {
+					5A281DF91DAC93F800DA8E1E = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5A281DF51DAC93F800DA8E1E /* Build configuration list for PBXProject "Nooma" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A281DF11DAC93F800DA8E1E;
+			productRefGroup = 5A281DFB1DAC93F900DA8E1E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A281DF91DAC93F800DA8E1E /* Nooma */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A281DF81DAC93F800DA8E1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A06ABF31DACE82E008645F9 /* Main.storyboard in Resources */,
+				5A281E0A1DAC93F900DA8E1E /* LaunchScreen.storyboard in Resources */,
+				5A281E071DAC93F900DA8E1E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A821FEB1942E0C96CC81EFA9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nooma/Pods-Nooma-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC3CEB240BB37DFC25CF0D0D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nooma/Pods-Nooma-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADEF9EAFC2FB9AA825BC9DCD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A281DF61DAC93F800DA8E1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A6134751DACAA9F000084DC /* LoginViewController.swift in Sources */,
+				5A281E021DAC93F900DA8E1E /* SecondViewController.swift in Sources */,
+				5A281DFE1DAC93F900DA8E1E /* AppDelegate.swift in Sources */,
+				5A281E001DAC93F900DA8E1E /* BooksViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5A06ABF11DACE82E008645F9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A06ABF21DACE82E008645F9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5A281E081DAC93F900DA8E1E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A281E091DAC93F900DA8E1E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5A281E0C1DAC93F900DA8E1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A281E0D1DAC93F900DA8E1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5A281E0F1DAC93F900DA8E1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01A41DB019DA449488002035 /* Pods-Nooma.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Nooma/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.nooma.Nooma;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5A281E101DAC93F900DA8E1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B36A9569987D7C5106E6E79 /* Pods-Nooma.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Nooma/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.nooma.Nooma;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A281DF51DAC93F800DA8E1E /* Build configuration list for PBXProject "Nooma" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A281E0C1DAC93F900DA8E1E /* Debug */,
+				5A281E0D1DAC93F900DA8E1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A281E0E1DAC93F900DA8E1E /* Build configuration list for PBXNativeTarget "Nooma" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A281E0F1DAC93F900DA8E1E /* Debug */,
+				5A281E101DAC93F900DA8E1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A281DF21DAC93F800DA8E1E /* Project object */;
+}
