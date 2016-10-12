@@ -7,6 +7,5 @@ target 'Nooma' do
 
   # Pods for Nooma
   pod 'Lock/Email', '1.27'
-  pod 'SimpleKeychain', '~> 0.7'
   pod 'SlackTextViewController'
 end

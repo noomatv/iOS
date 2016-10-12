@@ -15,6 +15,8 @@
 		5A281E071DAC93F900DA8E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A281E061DAC93F900DA8E1E /* Assets.xcassets */; };
 		5A281E0A1DAC93F900DA8E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A281E081DAC93F900DA8E1E /* LaunchScreen.storyboard */; };
 		5A6134751DACAA9F000084DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6134741DACAA9F000084DC /* LoginViewController.swift */; };
+		5A6E14BF1DADAD8F003DF378 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E14BE1DADAD8F003DF378 /* Message.swift */; };
+		5A6E14C31DADAE33003DF378 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E14C21DADAE33003DF378 /* MessageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,9 @@
 		5A281E091DAC93F900DA8E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A281E0B1DAC93F900DA8E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A6134741DACAA9F000084DC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5A6E14971DAD9E79003DF378 /* Nooma-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nooma-Bridging-Header.h"; sourceTree = "<group>"; };
+		5A6E14BE1DADAD8F003DF378 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		5A6E14C21DADAE33003DF378 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		5B36A9569987D7C5106E6E79 /* Pods-Nooma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nooma.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nooma/Pods-Nooma.release.xcconfig"; sourceTree = "<group>"; };
 		BEA95144F3BD49650E06A7FE /* Pods_Nooma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nooma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -65,16 +70,59 @@
 		5A281DFC1DAC93F900DA8E1E /* Nooma */ = {
 			isa = PBXGroup;
 			children = (
-				5A06ABF11DACE82E008645F9 /* Main.storyboard */,
-				5A281DFD1DAC93F900DA8E1E /* AppDelegate.swift */,
-				5A281DFF1DAC93F900DA8E1E /* BooksViewController.swift */,
-				5A281E011DAC93F900DA8E1E /* SecondViewController.swift */,
-				5A281E061DAC93F900DA8E1E /* Assets.xcassets */,
-				5A281E081DAC93F900DA8E1E /* LaunchScreen.storyboard */,
-				5A281E0B1DAC93F900DA8E1E /* Info.plist */,
-				5A6134741DACAA9F000084DC /* LoginViewController.swift */,
+				5A6E14BC1DADAD5A003DF378 /* Assets */,
+				5A6E14BD1DADAD69003DF378 /* Config */,
+				5A6E14C01DADADA8003DF378 /* Models */,
+				5A6E14C11DADADC6003DF378 /* Views */,
+				5A6E14BB1DADAD39003DF378 /* Controllers */,
 			);
 			path = Nooma;
+			sourceTree = "<group>";
+		};
+		5A6E14BB1DADAD39003DF378 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5A281E011DAC93F900DA8E1E /* SecondViewController.swift */,
+				5A281DFF1DAC93F900DA8E1E /* BooksViewController.swift */,
+				5A6134741DACAA9F000084DC /* LoginViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5A6E14BC1DADAD5A003DF378 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5A281E061DAC93F900DA8E1E /* Assets.xcassets */,
+				5A281E081DAC93F900DA8E1E /* LaunchScreen.storyboard */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		5A6E14BD1DADAD69003DF378 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				5A6E14971DAD9E79003DF378 /* Nooma-Bridging-Header.h */,
+				5A281DFD1DAC93F900DA8E1E /* AppDelegate.swift */,
+				5A281E0B1DAC93F900DA8E1E /* Info.plist */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		5A6E14C01DADADA8003DF378 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A6E14BE1DADAD8F003DF378 /* Message.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5A6E14C11DADADC6003DF378 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A06ABF11DACE82E008645F9 /* Main.storyboard */,
+				5A6E14C21DADAE33003DF378 /* MessageTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		829AACCF22EF111F695A4A06 /* Frameworks */ = {
@@ -129,6 +177,7 @@
 				TargetAttributes = {
 					5A281DF91DAC93F800DA8E1E = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = Z52W8KKVT2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -219,8 +268,10 @@
 			files = (
 				5A6134751DACAA9F000084DC /* LoginViewController.swift in Sources */,
 				5A281E021DAC93F900DA8E1E /* SecondViewController.swift in Sources */,
+				5A6E14BF1DADAD8F003DF378 /* Message.swift in Sources */,
 				5A281DFE1DAC93F900DA8E1E /* AppDelegate.swift in Sources */,
 				5A281E001DAC93F900DA8E1E /* BooksViewController.swift in Sources */,
+				5A6E14C31DADAE33003DF378 /* MessageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +315,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -286,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -314,6 +366,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -330,7 +383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -344,10 +397,13 @@
 			baseConfigurationReference = 01A41DB019DA449488002035 /* Pods-Nooma.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z52W8KKVT2;
 				INFOPLIST_FILE = Nooma/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tv.nooma.Nooma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Nooma/Nooma-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -357,10 +413,13 @@
 			baseConfigurationReference = 5B36A9569987D7C5106E6E79 /* Pods-Nooma.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z52W8KKVT2;
 				INFOPLIST_FILE = Nooma/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tv.nooma.Nooma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Nooma/Nooma-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

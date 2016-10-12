@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LoremIpsum.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,11 +47,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>02639D2749F0F5A9D4D5A6FEBBDBD2A9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
 		<dict>
 			<key>primary</key>
@@ -57,12 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>32623DBB1E7C69830D26C1F2F3B50043</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4DA8451A01BA55C8C5EED725B78F882B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>70257C579A6C8A8F2DD0EFC5243A1DB8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BFEF69D6E301A2E8A3F0F6E32C32BC80</key>
+		<key>AC8432121E84B3F4C381F4D5E457C765</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF4F316E7D5AEBBA5A75ED2DCDB77294</key>
+		<key>E8EF8236F7A74A23CE34B5AF87391B10</key>
 		<dict>
 			<key>primary</key>
 			<true/>

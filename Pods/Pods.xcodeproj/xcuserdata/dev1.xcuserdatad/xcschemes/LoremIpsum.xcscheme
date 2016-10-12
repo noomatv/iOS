@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1C3436CEA5C3D39764C5F54374794ECB"
-               BuildableName = "AFNetworking.framework"
-               BlueprintName = "AFNetworking"
+               BlueprintIdentifier = "AC8432121E84B3F4C381F4D5E457C765"
+               BuildableName = "LoremIpsum.framework"
+               BlueprintName = "LoremIpsum"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1C3436CEA5C3D39764C5F54374794ECB"
-            BuildableName = "AFNetworking.framework"
-            BlueprintName = "AFNetworking"
+            BlueprintIdentifier = "AC8432121E84B3F4C381F4D5E457C765"
+            BuildableName = "LoremIpsum.framework"
+            BlueprintName = "LoremIpsum"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
