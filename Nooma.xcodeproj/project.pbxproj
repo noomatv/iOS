@@ -405,6 +405,7 @@
 			baseConfigurationReference = 01A41DB019DA449488002035 /* Pods-Nooma.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Z52W8KKVT2;
 				INFOPLIST_FILE = Nooma/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -421,6 +422,7 @@
 			baseConfigurationReference = 5B36A9569987D7C5106E6E79 /* Pods-Nooma.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Z52W8KKVT2;
 				INFOPLIST_FILE = Nooma/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

@@ -13,6 +13,7 @@ import SocketIO
 class ChatViewController: SLKTextViewController {
     
     var messages = [Message]()
+    var socket: SocketIOClient?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +26,9 @@ class ChatViewController: SLKTextViewController {
         
         Backend.get(path: "messages/1540", callback: afterRequest)
         
-        let socket = SocketIOClient(socketURL: URL(string: "https://noomatv-node.herokuapp.com")!, config: [.log(true), .forcePolling(true)])
+        socket = SocketIOClient(socketURL: URL(string: Backend.url)!, config: [.log(true), .forcePolling(true)])
         
-        socket.on("connect") {data, ack in
+        socket?.on("connect") {data, ack in
             print("\n\n\n\n\n\n")
 
             print("socket connected")
@@ -35,27 +36,42 @@ class ChatViewController: SLKTextViewController {
             print("\n\n\n\n\n\n")
         }
         
-        socket.on("currentAmount") {data, ack in
-            if let cur = data[0] as? Double {
-                socket.emitWithAck("canUpdate", cur)(0) {data in
-                    socket.emit("update", ["amount": cur + 2.50])
-                }
-                
-                ack.with("Got your currentAmount", "dude")
-            }
-        }
+        socket?.on("chatSent") {data, ack in
+            print("\n\n\n\n\n\ndata!")
+            
+            print(data)
         
-        socket.connect()
-
-
-    }
+            
+            print("\n\n\n\n\n\nenddata!")
+        }
     
+        
+        socket?.connect()
+    }
+
+
+
     func afterRequest(response: NSArray?) {
         if let arrOfMessages = response {
             for message in arrOfMessages.reversed() {
                 messages.append(message as! Message)
             }
         }
+    }
+    
+    override func didPressRightButton(_ sender: Any?) {
+        self.textView.refreshFirstResponder()
+        
+        if let message = self.textView.text {
+            socket?.emit("chat", [
+                "incoming": [
+                    "user": CurrentUser,
+                    "message": message
+                ]
+            ])
+        }
+        
+        self.textView.text = ""
     }
     
     override func didReceiveMemoryWarning() {

@@ -9,7 +9,7 @@
 import Foundation
 
 class Backend {
-    static var url = "https://noomatv-node.herokuapp.com/"
+    static var url = "http://localhost:4567/"
     
     static func get(path: String, callback:(NSArray?) -> Void) {
         if let urlToReq = NSURL(string: url + path) {
