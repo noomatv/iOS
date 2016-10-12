@@ -24,7 +24,6 @@ class ChatViewController: SLKTextViewController {
         tableView?.estimatedRowHeight = 50.0 //needed for autolayout
         isInverted = true
         
-        Backend.get(path: "messages/\(CurrentUser["classroom_id"] as! Int)", callback: afterRequest)
         socket = SocketIOClient(socketURL: URL(string: Backend.url)!, config: [.log(true), .forcePolling(true)])
         
         socket?.on("connect") {data, ack in
@@ -38,12 +37,9 @@ class ChatViewController: SLKTextViewController {
             let incoming = json["incoming"] as! Dictionary<String, Any>
             
             var user = incoming["user"] as! Dictionary<String, Any>
+            user["status"] = user["status"] as! Dictionary<String, Int>
             
-            let status = user["status"] as! Dictionary<String, Int>
-            user["status"] = status
-            
-            let message = incoming["message"] as! String
-            let newMessage = Message(name: user["username"] as! String, body: message)
+            let newMessage = Message(name: user["username"] as! String, body: incoming["message"] as! String)
             self.messages.insert(newMessage, at: 0)
             
             DispatchQueue.main.async {
@@ -52,6 +48,12 @@ class ChatViewController: SLKTextViewController {
         }
     
         socket?.connect()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    
+        Backend.get(path: "messages/\(CurrentUser["classroom_id"] as! Int)", callback: afterRequest)
     }
 
     func convertStringToDictionary(text: String) -> [String:AnyObject]? {
