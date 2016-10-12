@@ -22,18 +22,15 @@ class SecondViewController: SLKTextViewController {
         tableView?.estimatedRowHeight = 50.0 //needed for autolayout
         isInverted = true
         
-        messages.append(Message(name: "Kyrie", body: "This is not a high school kid coming to you — 'Kobe, Kobe, oh my God!' This is me, coming to talk to you, one-on-one."))
-        messages.append(Message(name: "Kobe", body: "I know your dad don't think you can beat me one-on-one"))
-        messages.append(Message(name: "Kobe", body: "I know that. I know that."))
-        messages.append(Message(name: "Kobe", body: "Get your dad on the phone right now. Be like, 'Pops, I'm trying to bet Kob' 50 grand I can beat him one-on-one.' He'll be like, 'Son, are you crazy? Are you crazy?'"))
-        messages.append(Message(name: "Kyrie", body: "He thinks he's talking to a high school kid!"))
-        messages.append(Message(name: "Kobe", body: "You just came out of high school, kid!"))
-        messages.append(Message(name: "Kyrie", body: "I just came out of college!"))
-        messages.append(Message(name: "Kyrie", body: "You came out of high school!"))
-        messages.append(Message(name: "Kobe", body: "You played two games. You are a high school kid."))
-
-
-        self.tableView?.reloadData()
+        Backend.get(path: "messages/1540", callback: afterRequest)
+    }
+    
+    func afterRequest(response: NSArray?) {
+        if let arrOfMessages = response {
+            for message in arrOfMessages.reversed() {
+                messages.append(message as! Message)
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
