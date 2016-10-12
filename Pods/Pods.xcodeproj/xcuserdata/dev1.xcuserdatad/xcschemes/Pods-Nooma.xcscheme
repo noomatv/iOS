@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "32623DBB1E7C69830D26C1F2F3B50043"
+               BlueprintIdentifier = "53E117EF814CEF1E3E26D0BCC9E81DDB"
                BuildableName = "Pods_Nooma.framework"
                BlueprintName = "Pods-Nooma"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "32623DBB1E7C69830D26C1F2F3B50043"
+            BlueprintIdentifier = "53E117EF814CEF1E3E26D0BCC9E81DDB"
             BuildableName = "Pods_Nooma.framework"
             BlueprintName = "Pods-Nooma"
             ReferencedContainer = "container:Pods.xcodeproj">

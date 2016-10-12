@@ -8,4 +8,5 @@ target 'Nooma' do
   # Pods for Nooma
   pod 'Lock/Email', '1.27'
   pod 'SlackTextViewController'
+  pod 'Socket.IO-Client-Swift', '~> 8.0.2'
 end

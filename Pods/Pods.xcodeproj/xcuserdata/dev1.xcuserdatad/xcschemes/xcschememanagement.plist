@@ -19,11 +19,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>LoremIpsum.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,12 +29,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SimpleKeychain.xcscheme</key>
+		<key>SlackTextViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SlackTextViewController.xcscheme</key>
+		<key>Socket.IO-Client-Swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -57,12 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>32623DBB1E7C69830D26C1F2F3B50043</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4DA8451A01BA55C8C5EED725B78F882B</key>
+		<key>53E117EF814CEF1E3E26D0BCC9E81DDB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,17 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AC8432121E84B3F4C381F4D5E457C765</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>D95152321138ADA566FE397AE042B6AB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E8EF8236F7A74A23CE34B5AF87391B10</key>
+		<key>F28D05AF3D61DD9FDA336FE294B6A1A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F2CEB56B88A88C824CD5E1B34BBA0453</key>
 		<dict>
 			<key>primary</key>
 			<true/>

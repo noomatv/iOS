@@ -11,13 +11,14 @@
 		5A06ABF31DACE82E008645F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A06ABF11DACE82E008645F9 /* Main.storyboard */; };
 		5A281DFE1DAC93F900DA8E1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A281DFD1DAC93F900DA8E1E /* AppDelegate.swift */; };
 		5A281E001DAC93F900DA8E1E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A281DFF1DAC93F900DA8E1E /* BooksViewController.swift */; };
-		5A281E021DAC93F900DA8E1E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A281E011DAC93F900DA8E1E /* SecondViewController.swift */; };
+		5A281E021DAC93F900DA8E1E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A281E011DAC93F900DA8E1E /* ChatViewController.swift */; };
 		5A281E071DAC93F900DA8E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A281E061DAC93F900DA8E1E /* Assets.xcassets */; };
 		5A281E0A1DAC93F900DA8E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A281E081DAC93F900DA8E1E /* LaunchScreen.storyboard */; };
 		5A6134751DACAA9F000084DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6134741DACAA9F000084DC /* LoginViewController.swift */; };
 		5A6E14BF1DADAD8F003DF378 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E14BE1DADAD8F003DF378 /* Message.swift */; };
 		5A6E14C31DADAE33003DF378 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E14C21DADAE33003DF378 /* MessageTableViewCell.swift */; };
 		5A6E14C51DADC4A8003DF378 /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E14C41DADC4A8003DF378 /* Backend.swift */; };
+		5ADE88881DADE1F200C83380 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE88871DADE1F200C83380 /* CurrentUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +27,7 @@
 		5A281DFA1DAC93F900DA8E1E /* Nooma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nooma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A281DFD1DAC93F900DA8E1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A281DFF1DAC93F900DA8E1E /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
-		5A281E011DAC93F900DA8E1E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		5A281E011DAC93F900DA8E1E /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		5A281E061DAC93F900DA8E1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A281E091DAC93F900DA8E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A281E0B1DAC93F900DA8E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,6 +36,7 @@
 		5A6E14BE1DADAD8F003DF378 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5A6E14C21DADAE33003DF378 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		5A6E14C41DADC4A8003DF378 /* Backend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
+		5ADE88871DADE1F200C83380 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		5B36A9569987D7C5106E6E79 /* Pods-Nooma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nooma.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nooma/Pods-Nooma.release.xcconfig"; sourceTree = "<group>"; };
 		BEA95144F3BD49650E06A7FE /* Pods_Nooma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nooma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,7 +86,7 @@
 		5A6E14BB1DADAD39003DF378 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5A281E011DAC93F900DA8E1E /* SecondViewController.swift */,
+				5A281E011DAC93F900DA8E1E /* ChatViewController.swift */,
 				5A281DFF1DAC93F900DA8E1E /* BooksViewController.swift */,
 				5A6134741DACAA9F000084DC /* LoginViewController.swift */,
 			);
@@ -115,6 +117,7 @@
 			children = (
 				5A6E14BE1DADAD8F003DF378 /* Message.swift */,
 				5A6E14C41DADC4A8003DF378 /* Backend.swift */,
+				5ADE88871DADE1F200C83380 /* CurrentUser.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -270,11 +273,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A6134751DACAA9F000084DC /* LoginViewController.swift in Sources */,
-				5A281E021DAC93F900DA8E1E /* SecondViewController.swift in Sources */,
+				5A281E021DAC93F900DA8E1E /* ChatViewController.swift in Sources */,
 				5A6E14BF1DADAD8F003DF378 /* Message.swift in Sources */,
 				5A281DFE1DAC93F900DA8E1E /* AppDelegate.swift in Sources */,
 				5A281E001DAC93F900DA8E1E /* BooksViewController.swift in Sources */,
 				5A6E14C51DADC4A8003DF378 /* Backend.swift in Sources */,
+				5ADE88881DADE1F200C83380 /* CurrentUser.swift in Sources */,
 				5A6E14C31DADAE33003DF378 /* MessageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
