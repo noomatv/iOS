@@ -67,8 +67,6 @@ class ChatViewController: SLKTextViewController {
         return nil
     }
     
-
-
     func afterRequest(response: NSArray?) {
         if let arrOfMessages = response {
             for message in arrOfMessages.reversed() {

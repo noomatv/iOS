@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.checkExistentSession()
-        
+
         let theme = A0Theme()
         theme.registerImage(withName: "noomalogo", bundle: Bundle.main, forKey: A0ThemeIconImageName)
         theme.register(UIColor(red:0.255, green:0.816, blue:0.478, alpha:1.00), forKey: A0ThemePrimaryButtonNormalColor)
@@ -30,17 +30,31 @@ class LoginViewController: UIViewController {
 
 
         A0Theme.sharedInstance().register(theme)
+      
+        let lock = A0Lock()
+        let controller = lock.newEmailViewController()
+        lock.presentEmailController(controller, from: self)
+        
+        controller?.onAuthenticationBlock = { (profile, token) in
+            
+            let defaults = UserDefaults.standard
+            
+            defaults.set(NSKeyedArchiver.archivedData(withRootObject: profile), forKey: "profile")
+            defaults.set(NSKeyedArchiver.archivedData(withRootObject: token), forKey: "token")
+            
+            defaults.synchronize()
+            
+            self.dismiss(animated: true, completion: nil)
+        }
     }
-
-    // MARK: - Private
     
     private func checkExistentSession() {
         let defaults = UserDefaults.standard
-        print(defaults.data(forKey: "token"))
         
         if defaults.data(forKey: "token") != nil &&
             defaults.data(forKey: "profile") != nil {
-            self.performSegue(withIdentifier: "UserLoggedIn", sender: nil)
+            
+            self.performSegue(withIdentifier: "SignedInSegue", sender: nil)
         } else {
             let lock = A0Lock()
             let controller = lock.newEmailViewController()
@@ -55,7 +69,8 @@ class LoginViewController: UIViewController {
                 
                 defaults.synchronize()
                 
-                self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: false, completion: nil)
+                self.performSegue(withIdentifier: "SignedInSegue", sender: nil)
             }
         }
     }
