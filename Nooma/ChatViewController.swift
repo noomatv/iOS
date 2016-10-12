@@ -28,26 +28,43 @@ class ChatViewController: SLKTextViewController {
         socket = SocketIOClient(socketURL: URL(string: Backend.url)!, config: [.log(true), .forcePolling(true)])
         
         socket?.on("connect") {data, ack in
-            print("\n\n\n\n\n\n")
-
-            print("socket connected")
-            
-            print("\n\n\n\n\n\n")
+            self.socket?.emit("joinRoom", [
+                "user": CurrentUser
+            ])
         }
         
         socket?.on("chatSent") {data, ack in
-            print("\n\n\n\n\n\ndata!")
+            let json = data[0] as! Dictionary<String, Any>
+            let incoming = json["incoming"] as! Dictionary<String, Any>
             
-            print(data)
-        
+            var user = incoming["user"] as! Dictionary<String, Any>
             
-            print("\n\n\n\n\n\nenddata!")
+            let status = user["status"] as! Dictionary<String, Int>
+            user["status"] = status
+            
+            let message = incoming["message"] as! String
+            let newMessage = Message(name: user["username"] as! String, body: message)
+            self.messages.insert(newMessage, at: 0)
+            
+            DispatchQueue.main.async {
+                self.tableView?.reloadData()
+            }
         }
     
-        
         socket?.connect()
     }
 
+    func convertStringToDictionary(text: String) -> [String:AnyObject]? {
+        if let data = text.data(using: String.Encoding.utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
+            } catch let error as NSError {
+                print(error)
+            }
+        }
+        return nil
+    }
+    
 
 
     func afterRequest(response: NSArray?) {

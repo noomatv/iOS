@@ -9,7 +9,6 @@
 import UIKit
 
 class MessageTableViewCell: UITableViewCell {
-    
     static let REUSE_ID = "MessageTableViewCell"
     
     let nameLabel : UILabel = UILabel()
@@ -44,5 +43,4 @@ class MessageTableViewCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
