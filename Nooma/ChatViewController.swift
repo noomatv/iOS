@@ -24,8 +24,7 @@ class ChatViewController: SLKTextViewController {
         tableView?.estimatedRowHeight = 50.0 //needed for autolayout
         isInverted = true
         
-        Backend.get(path: "messages/1540", callback: afterRequest)
-        
+        Backend.get(path: "messages/\(CurrentUser["classroom_id"] as! Int)", callback: afterRequest)
         socket = SocketIOClient(socketURL: URL(string: Backend.url)!, config: [.log(true), .forcePolling(true)])
         
         socket?.on("connect") {data, ack in
