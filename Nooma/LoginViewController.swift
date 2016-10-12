@@ -19,7 +19,17 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.checkExistentSession()
+        
+        let theme = A0Theme()
+        theme.registerImage(withName: "noomalogo", bundle: Bundle.main, forKey: A0ThemeIconImageName)
+        theme.register(UIColor(red:0.255, green:0.816, blue:0.478, alpha:1.00), forKey: A0ThemePrimaryButtonNormalColor)
+        theme.register(UIColor(red:0.455, green:1.000, blue:0.678, alpha:1.00), forKey: A0ThemePrimaryButtonHighlightedColor)
+        theme.register(.white, forKey: A0ThemePrimaryButtonTextColor)
+        theme.statusBarStyle = .lightContent
+        theme.register(.white, forKey: A0ThemeIconBackgroundColor)
 
+
+        A0Theme.sharedInstance().register(theme)
     }
 
     // MARK: - Private
