@@ -66,8 +66,12 @@ class LoginViewController: UIViewController {
                 
                 defaults.set(NSKeyedArchiver.archivedData(withRootObject: profile), forKey: "profile")
                 defaults.set(NSKeyedArchiver.archivedData(withRootObject: token), forKey: "token")
-                
                 defaults.synchronize()
+                
+                
+                // Make call to back end
+                // GET /api/v1/login
+                // with header token and email
                 
                 self.dismiss(animated: false, completion: nil)
                 self.performSegue(withIdentifier: "SignedInSegue", sender: nil)

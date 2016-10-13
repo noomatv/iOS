@@ -24,7 +24,7 @@ class ChatViewController: SLKTextViewController {
         tableView?.estimatedRowHeight = 50.0 //needed for autolayout
         isInverted = true
         
-        socket = SocketIOClient(socketURL: URL(string: Backend.url)!, config: [.log(true), .forcePolling(true)])
+        socket = SocketIOClient(socketURL: URL(string: Backend.socketUrl)!, config: [.log(true), .forcePolling(true)])
         
         socket?.on("connect") {data, ack in
             self.socket?.emit("joinRoom", [
@@ -53,18 +53,7 @@ class ChatViewController: SLKTextViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     
-        Backend.get(path: "messages/\(CurrentUser["classroom_id"] as! Int)", callback: afterRequest)
-    }
-
-    func convertStringToDictionary(text: String) -> [String:AnyObject]? {
-        if let data = text.data(using: String.Encoding.utf8) {
-            do {
-                return try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
-            } catch let error as NSError {
-                print(error)
-            }
-        }
-        return nil
+        Backend.getMessages(path: "messages/\(CurrentUser["classroom_id"] as! Int)", callback: afterRequest)
     }
     
     func afterRequest(response: NSArray?) {
