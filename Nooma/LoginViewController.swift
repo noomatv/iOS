@@ -35,24 +35,35 @@ class LoginViewController: UIViewController {
         lock.presentEmailController(controller, from: self)
         
         controller?.onAuthenticationBlock = { (profile, token) in
-            
             let defaults = UserDefaults.standard
             
             defaults.set(NSKeyedArchiver.archivedData(withRootObject: profile), forKey: "profile")
             defaults.set(NSKeyedArchiver.archivedData(withRootObject: token), forKey: "token")
             defaults.synchronize()
             
-            
-            // Make call to back end
-            // GET /api/v1/login
-            // with header token and email
-            
-            self.dismiss(animated: false, completion: nil)
-            self.performSegue(withIdentifier: "SignedInSegue", sender: nil)
+            if let email = profile.email {
+                Backend.makeRequest(url: "\(Backend.httpUrl)signin", method: "POST", bodyData: "email=\(email)&auth_id=\(profile.userId)&classroom_id=\(Backend.classroomId)", userToken: token.idToken, callback: self.afterRequest)
+            }
         }
     }
     
-
+    private func afterRequest(data: Data?, response: URLResponse?, error: Error?) {
+        if let data = data {
+            if let response = Backend.parseJSONtoDictionary(inputData: data as NSData) {
+                if let errors = response["errors"] {
+                    print("Errors \(errors)")
+                } else {
+                    self.dismiss(animated: false, completion: nil)
+                    
+                    if let _ = response["existing_user"] {
+                        self.performSegue(withIdentifier: "SignedInSegue", sender: nil)
+                    } else if let _ = response["new_user"] {
+                        self.performSegue(withIdentifier: "ChooseUsernameSegue", sender: nil)
+                    }
+                }
+            }
+        }
+    }
     
     private func checkExistingSession() -> Bool {
         let defaults = UserDefaults.standard
@@ -62,7 +73,6 @@ class LoginViewController: UIViewController {
             return true
         } else {
             return false
-
         }
     }
     
@@ -74,7 +84,6 @@ class LoginViewController: UIViewController {
         theme.register(.white, forKey: A0ThemePrimaryButtonTextColor)
         theme.statusBarStyle = .lightContent
         theme.register(.white, forKey: A0ThemeIconBackgroundColor)
-        
         
         A0Theme.sharedInstance().register(theme)
     }

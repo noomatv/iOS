@@ -28,17 +28,15 @@ class ChatViewController: SLKTextViewController {
         
         socket?.on("connect") {data, ack in
             self.socket?.emit("joinRoom", [
-                "user": CurrentUser
+                "user": CurrentUser!
             ])
         }
         
         socket?.on("chatSent") {data, ack in
             let json = data[0] as! Dictionary<String, Any>
             let incoming = json["incoming"] as! Dictionary<String, Any>
-            
-            var user = incoming["user"] as! Dictionary<String, Any>
-            user["status"] = user["status"] as! Dictionary<String, Int>
-            
+            let user = incoming["user"] as! Dictionary<String, Any>
+
             let newMessage = Message(name: user["username"] as! String, body: incoming["message"] as! String)
             self.messages.insert(newMessage, at: 0)
             
@@ -53,7 +51,7 @@ class ChatViewController: SLKTextViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     
-        Backend.getMessages(path: "messages/\(CurrentUser["classroom_id"] as! Int)", callback: afterRequest)
+        Backend.getMessages(path: "messages/\(CurrentUser!["classroom_id"] as! Int)", callback: afterRequest)
     }
     
     func afterRequest(response: NSArray?) {
@@ -70,7 +68,7 @@ class ChatViewController: SLKTextViewController {
         if let message = self.textView.text {
             socket?.emit("chat", [
                 "incoming": [
-                    "user": CurrentUser,
+                    "user": CurrentUser!,
                     "message": message
                 ]
             ])
