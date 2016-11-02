@@ -8,14 +8,13 @@
 
 import UIKit
 import Lock
+import SwiftyJSON
 
 class BooksViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        getBooks()
+        // Do any additional setup after loading the view, typically from a nib.        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,7 +27,6 @@ class BooksViewController: UITableViewController {
     }
     
     func tokenFailed() {
-        print("Uh oh...")
         self.performSegue(withIdentifier: "unwindToLogin", sender: self)
     }
 
@@ -48,25 +46,11 @@ class BooksViewController: UITableViewController {
             userToken: token.idToken,
             callback: {(data: Data?, response: URLResponse?, error: Error?) in
                 if let data = data {
-                    print("data", data)
+                    let json = JSON(data: data)
+                    CurrentUser = Backend.convertStringToDictionary(text: json["user"].stringValue)
                     
-                    if let response = Backend.parseJSONtoDictionary(inputData: data as NSData) {
-                        print("response", response)
-                        
-                        if let errors = response["errors"] {
-                            print("Errors \(errors)")
-                        } else {
-                            print("response", response)
-                            if let currentUser = response["user"] {
-                                CurrentUser = Backend.convertStringToDictionary(text: currentUser as! String)!
-                                
-                                print("CurrentUser \(CurrentUser as Any)")
-                            }
-                            
-                            if let books = response["books"] {
-                                print("BOOKS \(books)")
-                            }
-                        }
+                    for book in json["books"].arrayValue {
+                        print(book["book_dir"].stringValue)
                     }
                 }
             }

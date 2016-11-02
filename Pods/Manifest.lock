@@ -26,11 +26,13 @@ PODS:
   - Masonry (0.6.4)
   - SlackTextViewController (1.9.5)
   - Socket.IO-Client-Swift (8.0.2)
+  - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
   - Lock/Email (= 1.27)
   - SlackTextViewController
   - Socket.IO-Client-Swift (~> 8.0.2)
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -38,7 +40,8 @@ SPEC CHECKSUMS:
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   SlackTextViewController: fbcdadbb8090673f604484ff5b6eb8d77baed42a
   Socket.IO-Client-Swift: 136598e4a81a42b0e6855e7f94a0e5a6efdc5ff8
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 8fe8f292fd7d3719638b3ae3efec4a46df42c68b
+PODFILE CHECKSUM: e9f91f1e576c318ec8289d6f59ab344ddf89dbd0
 
 COCOAPODS: 1.1.0.rc.2
