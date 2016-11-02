@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class BooksViewController: UITableViewController {
     
-    var bookTitles: [String] = []
+    var bookTitles: [Page] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class BooksViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell")!
         
-        cell.textLabel?.text = bookTitles[indexPath.row]
+        cell.textLabel?.text = bookTitles[indexPath.row].book_dir
         return cell
     }
     
@@ -39,8 +39,13 @@ class BooksViewController: UITableViewController {
         return bookTitles.count
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(bookTitles[indexPath.row])
+        performSegue(withIdentifier: "BooksToChaptersSegue", sender: self)
+    }
+    
     func tokenFailed() {
-        self.performSegue(withIdentifier: "unwindToLogin", sender: self)
+        performSegue(withIdentifier: "unwindToLogin", sender: self)
     }
 
     func getBooks() {
@@ -64,7 +69,16 @@ class BooksViewController: UITableViewController {
                     self.bookTitles = []
                     
                     for book in json["books"].arrayValue {
-                        self.bookTitles.append(book["book_dir"].stringValue)
+                        let pageParams = [
+                            "uuid": book["uuid"].stringValue,
+                            "embed": book["embed"].stringValue,
+                            "body": book["body"].stringValue,
+                            "book_dir": book["book_dir"].stringValue,
+                            "chapter_dir": book["chapter_dir"].stringValue,
+                            "page_dir": book["page_dir"].stringValue,
+                        ]
+                        
+                        self.bookTitles.append(Page(pageParams: pageParams))
                     }
                     
                     DispatchQueue.main.async {

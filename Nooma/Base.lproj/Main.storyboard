@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Books View Controller-->
+        <!--Books-->
         <scene sceneID="au8-S4-MEE">
             <objects>
                 <tableViewController id="l0d-Zz-NgR" customClass="BooksViewController" customModule="Nooma" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,9 +31,9 @@
                             <outlet property="delegate" destination="l0d-Zz-NgR" id="J2E-Yx-FcW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="SHV-5X-iDo"/>
+                    <navigationItem key="navigationItem" title="Books" id="SHV-5X-iDo"/>
                     <connections>
-                        <segue destination="JMc-JN-ahh" kind="show" id="x6y-D4-KAb"/>
+                        <segue destination="JMc-JN-ahh" kind="show" identifier="BooksToChaptersSegue" id="x6y-D4-KAb"/>
                         <segue destination="Epi-9R-uJV" kind="unwind" identifier="unwindToLogin" unwindAction="prepareForUnwindWithSegue:" id="Mba-xy-fmW"/>
                     </connections>
                 </tableViewController>
@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="1686" y="-430"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Chapters-->
         <scene sceneID="FZi-KJ-QI3">
             <objects>
-                <tableViewController id="JMc-JN-ahh" sceneMemberID="viewController">
+                <tableViewController title="Chapters" id="JMc-JN-ahh" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Eaz-yZ-Wf2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="2396" y="-430"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Pages-->
         <scene sceneID="1QM-mL-ffz">
             <objects>
-                <tableViewController id="TLa-4Q-MhE" sceneMemberID="viewController">
+                <tableViewController title="Pages" id="TLa-4Q-MhE" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jbe-yu-BeK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
