@@ -11,6 +11,8 @@ import Lock
 import SwiftyJSON
 
 class BooksViewController: UITableViewController {
+    
+    var bookTitles: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,17 @@ class BooksViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell")!
+        
+        cell.textLabel?.text = bookTitles[indexPath.row]
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return bookTitles.count
     }
     
     func tokenFailed() {
@@ -50,7 +63,11 @@ class BooksViewController: UITableViewController {
                     CurrentUser = Backend.convertStringToDictionary(text: json["user"].stringValue)
                     
                     for book in json["books"].arrayValue {
-                        print(book["book_dir"].stringValue)
+                        self.bookTitles.append(book["book_dir"].stringValue)
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
                     }
                 }
             }
