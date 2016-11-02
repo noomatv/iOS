@@ -61,6 +61,7 @@ class BooksViewController: UITableViewController {
                 if let data = data {
                     let json = JSON(data: data)
                     CurrentUser = Backend.convertStringToDictionary(text: json["user"].stringValue)
+                    self.bookTitles = []
                     
                     for book in json["books"].arrayValue {
                         self.bookTitles.append(book["book_dir"].stringValue)
