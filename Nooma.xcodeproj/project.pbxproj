@@ -19,6 +19,7 @@
 		5A6E14C31DADAE33003DF378 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E14C21DADAE33003DF378 /* MessageTableViewCell.swift */; };
 		5A6E14C51DADC4A8003DF378 /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E14C41DADC4A8003DF378 /* Backend.swift */; };
 		5ADE88881DADE1F200C83380 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE88871DADE1F200C83380 /* CurrentUser.swift */; };
+		5AEC41F21DCA4CD600A98BD0 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEC41F11DCA4CD600A98BD0 /* Token.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		5A6E14C21DADAE33003DF378 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		5A6E14C41DADC4A8003DF378 /* Backend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
 		5ADE88871DADE1F200C83380 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		5AEC41F11DCA4CD600A98BD0 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		5B36A9569987D7C5106E6E79 /* Pods-Nooma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nooma.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nooma/Pods-Nooma.release.xcconfig"; sourceTree = "<group>"; };
 		BEA95144F3BD49650E06A7FE /* Pods_Nooma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nooma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 				5A6E14BE1DADAD8F003DF378 /* Message.swift */,
 				5A6E14C41DADC4A8003DF378 /* Backend.swift */,
 				5ADE88871DADE1F200C83380 /* CurrentUser.swift */,
+				5AEC41F11DCA4CD600A98BD0 /* Token.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AEC41F21DCA4CD600A98BD0 /* Token.swift in Sources */,
 				5A6134751DACAA9F000084DC /* LoginViewController.swift in Sources */,
 				5A281E021DAC93F900DA8E1E /* ChatViewController.swift in Sources */,
 				5A6E14BF1DADAD8F003DF378 /* Message.swift in Sources */,

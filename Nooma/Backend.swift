@@ -30,7 +30,6 @@ class Backend {
             
             URLSession.shared.dataTask(with: request as URLRequest, completionHandler: callback).resume()
         }
-        
     }
     
     static func getMessages(path: String, callback:(NSArray?) -> Void) {
@@ -82,42 +81,4 @@ class Backend {
         }
         return nil
     }
-    
-    static func setCurrentUser() {
-        let defaults = UserDefaults.standard
-        
-        let tokenData = defaults.data(forKey: "token")
-        let profileData = defaults.data(forKey: "profile")
-        
-        let token = NSKeyedUnarchiver.unarchiveObject(with: tokenData!) as! A0Token
-        let profile = NSKeyedUnarchiver.unarchiveObject(with: profileData!) as! A0UserProfile
-        
-        Backend.makeRequest(
-            url: Backend.httpUrl + "books",
-            method: "POST",
-            bodyData: "email=\(profile.email!)&classroom_id=\(Backend.classroomId)",
-            userToken: token.idToken,
-            callback: {(data: Data?, response: URLResponse?, error: Error?) in
-                if let data = data {
-                    print("data", data)
-                    
-                    if let response = Backend.parseJSONtoDictionary(inputData: data as NSData) {
-                        print("response", response)
-                        
-                        if let errors = response["errors"] {
-                            print("Errors \(errors)")
-                        } else {
-                            print("response", response)
-                            if let currentUser = response["existing_user"] {
-                                CurrentUser = Backend.convertStringToDictionary(text: currentUser as! String)!
-                                
-                                print("HELLO")
-                                print(CurrentUser as Any)
-                            }
-                        }
-                    }
-                }
-            }
-        )
-    }
-}
+ }
