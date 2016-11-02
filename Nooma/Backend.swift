@@ -92,46 +92,32 @@ class Backend {
         let token = NSKeyedUnarchiver.unarchiveObject(with: tokenData!) as! A0Token
         let profile = NSKeyedUnarchiver.unarchiveObject(with: profileData!) as! A0UserProfile
         
-        print("\n\n\n")
-        print("\n\n\n")
-        print("OMG")
-        print("token \(token)")
-        print("profile \(profile)")
-        print("OMG")
-        print("\n\n\n")
-        print("\n\n\n")
-        
-
-        if let email = profile.email {
-
-            Backend.makeRequest(
-                url: Backend.httpUrl + "books",
-                method: "POST",
-                bodyData: "email=\(email)&auth_id=\(profile.userId)&classroom_id=\(Backend.classroomId)",
-                userToken: token.idToken,
-                callback: {(data: Data?, response: URLResponse?, error: Error?) in
-                    if let data = data {
-                        print("data", data)
+        Backend.makeRequest(
+            url: Backend.httpUrl + "books",
+            method: "POST",
+            bodyData: "email=\(profile.email!)&classroom_id=\(Backend.classroomId)",
+            userToken: token.idToken,
+            callback: {(data: Data?, response: URLResponse?, error: Error?) in
+                if let data = data {
+                    print("data", data)
+                    
+                    if let response = Backend.parseJSONtoDictionary(inputData: data as NSData) {
+                        print("response", response)
                         
-                        if let response = Backend.parseJSONtoDictionary(inputData: data as NSData) {
+                        if let errors = response["errors"] {
+                            print("Errors \(errors)")
+                        } else {
                             print("response", response)
-                            
-                            if let errors = response["errors"] {
-                                print("Errors \(errors)")
-                            } else {
-                                print("response", response)
-                                if let currentUser = response["existing_user"] {
-                                    CurrentUser = Backend.convertStringToDictionary(text: currentUser as! String)!
-                                    
-                                    print("HELLO")
-                                    print(CurrentUser)
-                                }
+                            if let currentUser = response["existing_user"] {
+                                CurrentUser = Backend.convertStringToDictionary(text: currentUser as! String)!
+                                
+                                print("HELLO")
+                                print(CurrentUser as Any)
                             }
                         }
                     }
                 }
-            )
-        }
-        
+            }
+        )
     }
 }

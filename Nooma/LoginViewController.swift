@@ -11,6 +11,9 @@ import Lock
 
 class LoginViewController: UIViewController {
     
+    var existingUser = false
+    var idToken: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,8 +44,10 @@ class LoginViewController: UIViewController {
             defaults.set(NSKeyedArchiver.archivedData(withRootObject: token), forKey: "token")
             defaults.synchronize()
             
+            self.idToken = token.idToken
+
             if let email = profile.email {
-                Backend.makeRequest(url: "\(Backend.httpUrl)signin", method: "POST", bodyData: "email=\(email)&auth_id=\(profile.userId)&classroom_id=\(Backend.classroomId)", userToken: token.idToken, callback: self.afterRequest)
+                Backend.makeRequest(url: "\(Backend.httpUrl)signin", method: "POST", bodyData: "email=\(email)&classroom_id=\(Backend.classroomId)", userToken: token.idToken, callback: self.afterRequest)
             }
         }
     }
@@ -54,11 +59,67 @@ class LoginViewController: UIViewController {
                     print("Errors \(errors)")
                 } else {
                     self.dismiss(animated: false, completion: nil)
-                    
+
                     if let _ = response["existing_user"] {
-                        self.performSegue(withIdentifier: "SignedInSegue", sender: nil)
+                        existingUser = true
                     } else if let _ = response["new_user"] {
                         self.performSegue(withIdentifier: "ChooseUsernameSegue", sender: nil)
+                    }
+
+                    if existingUser && idToken != nil {
+                        // idToken exists
+                        let client = A0Lock.shared().apiClient()
+                        let defaults = UserDefaults.standard
+
+                        client.fetchUserProfile(withIdToken: idToken!,
+                            success: { profile in
+                                // Our idToken is still valid...
+                                // We store the fetched user profile
+                                defaults.set(NSKeyedArchiver.archivedData(withRootObject: profile), forKey: "profile")
+
+                                // ✅ At this point, you can log the user into your app, by navigating to the corresponding screen
+                                self.performSegue(withIdentifier: "SignedInSegue", sender: nil)
+                            },
+                            failure: { error in
+                                // ⚠️ idToken has expired or is no longer valid
+                                let defaults = UserDefaults.standard
+                                defaults.data(forKey: "profile")
+                                let tokenData = defaults.data(forKey: "token")
+                                let token = NSKeyedUnarchiver.unarchiveObject(with: tokenData!) as! A0Token
+                                
+                                if token.refreshToken == nil {
+                                    return
+                                }
+                                
+                                let client = A0Lock.shared().apiClient()
+                                client.fetchNewIdToken(withRefreshToken: token.refreshToken!, parameters: nil,
+                                    success: { newToken in
+                                        print("\n\n\n3. fetchNewIdToken success\n\n\n")
+                                    
+                                        // Just got a new idToken!
+                                        // Don't forget to store it...
+                                        let defaults = UserDefaults.standard
+                                        defaults.set(NSKeyedArchiver.archivedData(withRootObject: newToken), forKey: "token")
+                                        defaults.synchronize()
+                                        
+                                        // ✅ At this point, you can log the user into your app, by navigating to the corresponding screen
+                                        self.performSegue(withIdentifier: "SignedInSegue", sender: nil)
+                                    },
+                                    failure: { error in
+                                        print("\n\n\n3. fetchNewIdToken error\n\n\n")
+                                        
+                                        // refreshToken is no longer valid (e.g. it has been revoked)
+                                        // Cleaning stored values since they are no longer valid
+                                        if let bundle = Bundle.main.bundleIdentifier {
+                                            UserDefaults.standard.removePersistentDomain(forName: bundle)
+                                        }
+                                        
+                                        // ⛔️ At this point, you should ask the user to enter his credentials again!
+                                        self.promptLogin()
+                                    }
+                                )
+                            }
+                        )
                     }
                 }
             }
