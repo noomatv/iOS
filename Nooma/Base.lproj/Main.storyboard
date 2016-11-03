@@ -45,13 +45,13 @@
         <!--Chapters-->
         <scene sceneID="FZi-KJ-QI3">
             <objects>
-                <tableViewController title="Chapters" id="JMc-JN-ahh" sceneMemberID="viewController">
+                <tableViewController title="Chapters" id="JMc-JN-ahh" customClass="ChaptersViewController" customModule="Nooma" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Eaz-yZ-Wf2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iWN-FR-c2m">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChapterCell" id="iWN-FR-c2m">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iWN-FR-c2m" id="ggj-xT-EQq">
@@ -67,9 +67,11 @@
                     </tableView>
                     <connections>
                         <segue destination="TLa-4Q-MhE" kind="show" id="wPK-Av-V3W"/>
+                        <segue destination="4ia-Qs-Vzg" kind="unwind" identifier="unwindToLogin" unwindAction="prepareForUnwindWithSegue:" id="OAm-9J-I0z"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="68M-EG-b2Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4ia-Qs-Vzg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2396" y="-430"/>
         </scene>
@@ -101,7 +103,7 @@
             </objects>
             <point key="canvasLocation" x="3106" y="-430"/>
         </scene>
-        <!--Chat View Controller-->
+        <!--Chat-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="8rJ-Kc-sve" customClass="ChatViewController" customModule="Nooma" customModuleProvider="target" sceneMemberID="viewController">
@@ -114,7 +116,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wJC-2j-Jsk"/>
+                    <navigationItem key="navigationItem" title="Chat" id="wJC-2j-Jsk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

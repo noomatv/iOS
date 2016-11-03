@@ -13,6 +13,7 @@ import SwiftyJSON
 class BooksViewController: UITableViewController {
     
     var bookTitles: [Page] = []
+    var selectedBook: Page?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +41,15 @@ class BooksViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(bookTitles[indexPath.row])
+        selectedBook = bookTitles[indexPath.row]
         performSegue(withIdentifier: "BooksToChaptersSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "BooksToChaptersSegue") {
+            let destinationVC = segue.destination as! ChaptersViewController
+            destinationVC.bookPage = selectedBook
+        }
     }
     
     func tokenFailed() {
@@ -75,7 +83,7 @@ class BooksViewController: UITableViewController {
                             "body": book["body"].stringValue,
                             "book_dir": book["book_dir"].stringValue,
                             "chapter_dir": book["chapter_dir"].stringValue,
-                            "page_dir": book["page_dir"].stringValue,
+                            "page_dir": book["page_dir"].stringValue
                         ]
                         
                         self.bookTitles.append(Page(pageParams: pageParams))
