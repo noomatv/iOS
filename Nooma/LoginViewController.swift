@@ -43,8 +43,12 @@ class LoginViewController: UIViewController {
         controller?.onAuthenticationBlock = { (profile, token) in
             let defaults = UserDefaults.standard
             
-            defaults.set(NSKeyedArchiver.archivedData(withRootObject: profile), forKey: "profile")
-            defaults.set(NSKeyedArchiver.archivedData(withRootObject: token), forKey: "token")
+            print("token.idToken \(token.idToken)")
+            
+            defaults.set(NSKeyedArchiver.archivedData(withRootObject: profile.email!), forKey: "email")
+            defaults.set(NSKeyedArchiver.archivedData(withRootObject: token.idToken), forKey: "token")
+            defaults.set(NSKeyedArchiver.archivedData(withRootObject: token.refreshToken!), forKey: "refreshToken")
+
             defaults.synchronize()
             
             self.idToken = token.idToken
@@ -90,7 +94,8 @@ class LoginViewController: UIViewController {
         let defaults = UserDefaults.standard
         
         if defaults.data(forKey: "token") != nil &&
-            defaults.data(forKey: "profile") != nil {
+            defaults.data(forKey: "refreshToken") != nil &&
+            defaults.data(forKey: "email") != nil {
             return true
         } else {
             return false

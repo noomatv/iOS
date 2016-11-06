@@ -21,6 +21,7 @@
 		5ADE88881DADE1F200C83380 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE88871DADE1F200C83380 /* CurrentUser.swift */; };
 		5AEB32501DCA6EF400A24650 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB324F1DCA6EF400A24650 /* Page.swift */; };
 		5AEB32521DCA7B8D00A24650 /* ChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB32511DCA7B8D00A24650 /* ChaptersViewController.swift */; };
+		5AEB32541DCBF24400A24650 /* PagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB32531DCBF24400A24650 /* PagesViewController.swift */; };
 		5AEC41F21DCA4CD600A98BD0 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEC41F11DCA4CD600A98BD0 /* Token.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		5ADE88871DADE1F200C83380 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		5AEB324F1DCA6EF400A24650 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		5AEB32511DCA7B8D00A24650 /* ChaptersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaptersViewController.swift; sourceTree = "<group>"; };
+		5AEB32531DCBF24400A24650 /* PagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagesViewController.swift; sourceTree = "<group>"; };
 		5AEC41F11DCA4CD600A98BD0 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		5B36A9569987D7C5106E6E79 /* Pods-Nooma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nooma.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nooma/Pods-Nooma.release.xcconfig"; sourceTree = "<group>"; };
 		BEA95144F3BD49650E06A7FE /* Pods_Nooma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nooma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 			children = (
 				5A281DFF1DAC93F900DA8E1E /* BooksViewController.swift */,
 				5AEB32511DCA7B8D00A24650 /* ChaptersViewController.swift */,
+				5AEB32531DCBF24400A24650 /* PagesViewController.swift */,
 				5A281E011DAC93F900DA8E1E /* ChatViewController.swift */,
 				5A6134741DACAA9F000084DC /* LoginViewController.swift */,
 			);
@@ -284,6 +287,7 @@
 				5AEB32521DCA7B8D00A24650 /* ChaptersViewController.swift in Sources */,
 				5AEC41F21DCA4CD600A98BD0 /* Token.swift in Sources */,
 				5A6134751DACAA9F000084DC /* LoginViewController.swift in Sources */,
+				5AEB32541DCBF24400A24650 /* PagesViewController.swift in Sources */,
 				5A281E021DAC93F900DA8E1E /* ChatViewController.swift in Sources */,
 				5A6E14BF1DADAD8F003DF378 /* Message.swift in Sources */,
 				5A281DFE1DAC93F900DA8E1E /* AppDelegate.swift in Sources */,

@@ -59,17 +59,17 @@ class BooksViewController: UITableViewController {
     func getBooks() {
         let defaults = UserDefaults.standard
         
-        let tokenData = defaults.data(forKey: "token")
-        let profileData = defaults.data(forKey: "profile")
+        let tokenData = defaults.data(forKey: "token")!
+        let emailData = defaults.data(forKey: "email")!
         
-        let token = NSKeyedUnarchiver.unarchiveObject(with: tokenData!) as! A0Token
-        let profile = NSKeyedUnarchiver.unarchiveObject(with: profileData!) as! A0UserProfile
-        
+        let token = NSKeyedUnarchiver.unarchiveObject(with: tokenData) as! String
+        let email = NSKeyedUnarchiver.unarchiveObject(with: emailData) as! String
+
         Backend.makeRequest(
             url: Backend.httpUrl + "books",
             method: "POST",
-            bodyData: "email=\(profile.email!)&classroom_id=\(Backend.classroomId)",
-            userToken: token.idToken,
+            bodyData: "email=\(email)&classroom_id=\(Backend.classroomId)",
+            userToken: token,
             callback: {(data: Data?, response: URLResponse?, error: Error?) in
                 if let data = data {
                     let json = JSON(data: data)

@@ -66,7 +66,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="TLa-4Q-MhE" kind="show" id="wPK-Av-V3W"/>
+                        <segue destination="TLa-4Q-MhE" kind="show" identifier="ChaptersToPagesSegue" id="wPK-Av-V3W"/>
                         <segue destination="4ia-Qs-Vzg" kind="unwind" identifier="unwindToLogin" unwindAction="prepareForUnwindWithSegue:" id="OAm-9J-I0z"/>
                     </connections>
                 </tableViewController>
@@ -78,13 +78,13 @@
         <!--Pages-->
         <scene sceneID="1QM-mL-ffz">
             <objects>
-                <tableViewController title="Pages" id="TLa-4Q-MhE" sceneMemberID="viewController">
+                <tableViewController title="Pages" id="TLa-4Q-MhE" customClass="PagesViewController" customModule="Nooma" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jbe-yu-BeK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cC5-PY-dGl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PageCell" id="cC5-PY-dGl">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cC5-PY-dGl" id="s02-r2-Vdj">
@@ -98,8 +98,12 @@
                             <outlet property="delegate" destination="TLa-4Q-MhE" id="UU8-e7-SL2"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="Ud0-Ct-2cA" kind="unwind" identifier="unwindToLogin" unwindAction="prepareForUnwindWithSegue:" id="OeT-6g-DYV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKZ-Y1-hne" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ud0-Ct-2cA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3106" y="-430"/>
         </scene>
