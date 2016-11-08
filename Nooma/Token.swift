@@ -49,7 +49,7 @@ class Token {
                         let defaults = UserDefaults.standard
                         
                         defaults.set(NSKeyedArchiver.archivedData(withRootObject: newToken.idToken), forKey: "token")
-                        defaults.set(NSKeyedArchiver.archivedData(withRootObject: newToken.refreshToken!), forKey: "refreshToken")
+                        defaults.set(NSKeyedArchiver.archivedData(withRootObject: refreshToken), forKey: "refreshToken")
 
                         defaults.synchronize()
                         // ✅ At this point, you can log the user into your app, by navigating to the corresponding screen
