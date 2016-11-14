@@ -24,4 +24,16 @@ class Page {
         self.chapter_dir = pageParams["chapter_dir"]
         self.page_dir = pageParams["page_dir"]
     }
+    
+    func bookDir() -> String {
+        return (book_dir!.components(separatedBy: "-").last?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
+    }
+    
+    func chapterDir() -> String {
+        return (chapter_dir!.components(separatedBy: "-").last?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
+    }
+    
+    func pageDir() -> String {
+        return (page_dir!.components(separatedBy: "-").last?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
+    }
 }

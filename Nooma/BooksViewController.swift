@@ -32,7 +32,7 @@ class BooksViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell")!
         
-        cell.textLabel?.text = bookTitles[indexPath.row].book_dir
+        cell.textLabel?.text = bookTitles[indexPath.row].bookDir()
         return cell
     }
     
@@ -76,6 +76,7 @@ class BooksViewController: UITableViewController {
                     CurrentUser = Backend.convertStringToDictionary(text: json["user"].stringValue)
                     self.bookTitles = []
                     
+                    print(json["books"].arrayValue)
                     for book in json["books"].arrayValue {
                         let pageParams = [
                             "uuid": book["uuid"].stringValue,

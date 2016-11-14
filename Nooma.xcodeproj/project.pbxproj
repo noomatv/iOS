@@ -14,6 +14,7 @@
 		5A281E021DAC93F900DA8E1E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A281E011DAC93F900DA8E1E /* ChatViewController.swift */; };
 		5A281E071DAC93F900DA8E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A281E061DAC93F900DA8E1E /* Assets.xcassets */; };
 		5A281E0A1DAC93F900DA8E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A281E081DAC93F900DA8E1E /* LaunchScreen.storyboard */; };
+		5A44B14E1DD2AF55009B1E85 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44B14D1DD2AF55009B1E85 /* PageViewController.swift */; };
 		5A6134751DACAA9F000084DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6134741DACAA9F000084DC /* LoginViewController.swift */; };
 		5A6E14BF1DADAD8F003DF378 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E14BE1DADAD8F003DF378 /* Message.swift */; };
 		5A6E14C31DADAE33003DF378 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E14C21DADAE33003DF378 /* MessageTableViewCell.swift */; };
@@ -35,6 +36,7 @@
 		5A281E061DAC93F900DA8E1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A281E091DAC93F900DA8E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A281E0B1DAC93F900DA8E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A44B14D1DD2AF55009B1E85 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		5A6134741DACAA9F000084DC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5A6E14971DAD9E79003DF378 /* Nooma-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nooma-Bridging-Header.h"; sourceTree = "<group>"; };
 		5A6E14BE1DADAD8F003DF378 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				5AEB32531DCBF24400A24650 /* PagesViewController.swift */,
 				5A281E011DAC93F900DA8E1E /* ChatViewController.swift */,
 				5A6134741DACAA9F000084DC /* LoginViewController.swift */,
+				5A44B14D1DD2AF55009B1E85 /* PageViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -190,7 +193,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Nooma;
 				TargetAttributes = {
 					5A281DF91DAC93F800DA8E1E = {
@@ -294,6 +297,7 @@
 				5A281E001DAC93F900DA8E1E /* BooksViewController.swift in Sources */,
 				5A6E14C51DADC4A8003DF378 /* Backend.swift in Sources */,
 				5ADE88881DADE1F200C83380 /* CurrentUser.swift in Sources */,
+				5A44B14E1DD2AF55009B1E85 /* PageViewController.swift in Sources */,
 				5AEB32501DCA6EF400A24650 /* Page.swift in Sources */,
 				5A6E14C31DADAE33003DF378 /* MessageTableViewCell.swift in Sources */,
 			);
@@ -420,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 01A41DB019DA449488002035 /* Pods-Nooma.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Z52W8KKVT2;
@@ -437,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B36A9569987D7C5106E6E79 /* Pods-Nooma.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Z52W8KKVT2;

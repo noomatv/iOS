@@ -14,7 +14,6 @@ class ChaptersViewController: UITableViewController {
     var bookPage: Page?
     var chapterTitles: [Page] = []
     var selectedChapter: Page?
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +28,7 @@ class ChaptersViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChapterCell")!
         
-        cell.textLabel?.text = chapterTitles[indexPath.row].chapter_dir
+        cell.textLabel?.text = chapterTitles[indexPath.row].chapterDir()
         return cell
     }
     

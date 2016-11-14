@@ -13,6 +13,7 @@ import SwiftyJSON
 class PagesViewController: UITableViewController {
     var chapterPage: Page?
     var pageTitles: [Page] = []
+    var selectedPage: Page?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +28,24 @@ class PagesViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PageCell")!
         
-        cell.textLabel?.text = pageTitles[indexPath.row].page_dir
+        cell.textLabel?.text = pageTitles[indexPath.row].pageDir()
         return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pageTitles.count
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedPage = pageTitles[indexPath.row]
+        performSegue(withIdentifier: "PagesToPageSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "PagesToPageSegue") {
+            let destinationVC = segue.destination as! PageViewController
+            destinationVC.currentPage = selectedPage
+        }
     }
     
     func getPages() {

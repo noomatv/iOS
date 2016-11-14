@@ -5,6 +5,8 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rps-zM-dY1" id="RSp-eX-fNo">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -55,7 +57,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iWN-FR-c2m" id="ggj-xT-EQq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -88,7 +90,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cC5-PY-dGl" id="s02-r2-Vdj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -100,12 +102,58 @@
                     </tableView>
                     <connections>
                         <segue destination="Ud0-Ct-2cA" kind="unwind" identifier="unwindToLogin" unwindAction="prepareForUnwindWithSegue:" id="OeT-6g-DYV"/>
+                        <segue destination="XLs-Jb-bBO" kind="show" identifier="PagesToPageSegue" id="MyC-gX-SWX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKZ-Y1-hne" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Ud0-Ct-2cA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3106" y="-430"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="ClW-Jv-wVn">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="XLs-Jb-bBO" customClass="PageViewController" customModule="Nooma" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oT8-Me-n4k"/>
+                        <viewControllerLayoutGuide type="bottom" id="1yI-Sw-gs5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LQH-Fw-ozF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IU0-sm-hZv">
+                                <rect key="frame" x="16" y="72" width="343" height="193"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IU0-sm-hZv" secondAttribute="height" multiplier="16:9" priority="250" id="dv9-lD-Y1G"/>
+                                </constraints>
+                            </webView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3i-VK-RU6">
+                                <rect key="frame" x="16" y="273" width="343" height="337"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IU0-sm-hZv" firstAttribute="leading" secondItem="LQH-Fw-ozF" secondAttribute="leadingMargin" priority="750" id="HiP-hy-tO9"/>
+                            <constraint firstItem="B3i-VK-RU6" firstAttribute="trailing" secondItem="LQH-Fw-ozF" secondAttribute="trailingMargin" id="Iqf-ko-g3v"/>
+                            <constraint firstItem="1yI-Sw-gs5" firstAttribute="top" secondItem="B3i-VK-RU6" secondAttribute="bottom" constant="8" symbolic="YES" id="e8K-EH-0as"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IU0-sm-hZv" secondAttribute="trailing" priority="750" id="fuT-5w-ODl"/>
+                            <constraint firstItem="B3i-VK-RU6" firstAttribute="leading" secondItem="LQH-Fw-ozF" secondAttribute="leadingMargin" id="hle-Gp-oOd"/>
+                            <constraint firstItem="B3i-VK-RU6" firstAttribute="top" secondItem="IU0-sm-hZv" secondAttribute="bottom" priority="750" constant="8" symbolic="YES" id="qBE-y1-6YV"/>
+                            <constraint firstItem="IU0-sm-hZv" firstAttribute="top" secondItem="oT8-Me-n4k" secondAttribute="bottom" constant="8" id="tSc-ar-W0f"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="embedWebView" destination="IU0-sm-hZv" id="ohL-Kh-0v0"/>
+                        <outlet property="markdownWebView" destination="B3i-VK-RU6" id="3sn-Jc-5kC"/>
+                        <outlet property="topMargin" destination="tSc-ar-W0f" id="YUT-bR-eN4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YJW-iH-vR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3808.8000000000002" y="-430.43478260869568"/>
         </scene>
         <!--Chat-->
         <scene sceneID="wg7-f3-ORb">
