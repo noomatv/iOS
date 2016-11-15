@@ -26,14 +26,20 @@ class Page {
     }
     
     func bookDir() -> String {
-        return (book_dir!.components(separatedBy: "-").last?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
+        return getDir(dir: book_dir!)
     }
     
     func chapterDir() -> String {
-        return (chapter_dir!.components(separatedBy: "-").last?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
+        return getDir(dir: chapter_dir!)
     }
     
     func pageDir() -> String {
-        return (page_dir!.components(separatedBy: "-").last?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
+        return getDir(dir: page_dir!)
+    }
+    
+    func getDir(dir: String) -> String {
+        var split = dir.components(separatedBy: "-")
+        split.remove(at: 0)
+        return split.joined(separator: "-").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
 }
