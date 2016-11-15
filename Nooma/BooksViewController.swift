@@ -76,9 +76,6 @@ class BooksViewController: UITableViewController {
                     CurrentUser = Backend.convertStringToDictionary(text: json["user"].stringValue)
                     self.bookTitles = []
                     
-                    print("WTF IS GOING ON \n\n\n")
-                    
-                    print(json["books"].arrayValue)
                     for book in json["books"].arrayValue {
                         let pageParams = [
                             "uuid": book["uuid"].stringValue,
