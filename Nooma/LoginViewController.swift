@@ -43,8 +43,6 @@ class LoginViewController: UIViewController {
         controller?.onAuthenticationBlock = { (profile, token) in
             let defaults = UserDefaults.standard
             
-            print("token.idToken \(token.idToken)")
-            
             defaults.set(NSKeyedArchiver.archivedData(withRootObject: profile.email!), forKey: "email")
             defaults.set(NSKeyedArchiver.archivedData(withRootObject: token.idToken), forKey: "token")
             defaults.set(NSKeyedArchiver.archivedData(withRootObject: token.refreshToken!), forKey: "refreshToken")
@@ -75,11 +73,9 @@ class LoginViewController: UIViewController {
                     print("Errors \(errors)")
                 } else {
                     self.dismiss(animated: false, completion: nil)
-
-                    if let _ = response["existing_user"] {
+                    
+                    if response["existing_user"] != nil || response["new_user"] != nil {
                         existingUser = true
-                    } else if let _ = response["new_user"] {
-                        self.performSegue(withIdentifier: "ChooseUsernameSegue", sender: nil)
                     }
 
                     if existingUser && idToken != nil {
