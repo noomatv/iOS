@@ -23,20 +23,25 @@ class ChatViewController: SLKTextViewController {
         tableView?.rowHeight = UITableViewAutomaticDimension //needed for autolayout
         tableView?.estimatedRowHeight = 50.0 //needed for autolayout
         isInverted = true
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         socket = SocketIOClient(socketURL: URL(string: Backend.socketUrl)!, config: [.log(true), .forcePolling(true)])
         
         socket?.on("connect") {data, ack in
             self.socket?.emit("joinRoom", [
                 "user": CurrentUser!
-            ])
+                ])
         }
         
         socket?.on("chatSent") {data, ack in
             let json = data[0] as! Dictionary<String, Any>
             let incoming = json["incoming"] as! Dictionary<String, Any>
             let user = incoming["user"] as! Dictionary<String, Any>
-
+            
             let newMessage = Message(name: user["username"] as! String, body: incoming["message"] as! String)
             self.messages.insert(newMessage, at: 0)
             
@@ -44,14 +49,16 @@ class ChatViewController: SLKTextViewController {
                 self.tableView?.reloadData()
             }
         }
-    
+        
         socket?.connect()
+        
+        Backend.getMessages(path: "messages/\(CurrentUser!["classroom_id"] as! Int)", callback: afterRequest)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    
-        Backend.getMessages(path: "messages/\(CurrentUser!["classroom_id"] as! Int)", callback: afterRequest)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        socket?.disconnect()
     }
     
     func afterRequest(response: NSArray?) {
